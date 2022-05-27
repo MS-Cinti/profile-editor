@@ -1,0 +1,26 @@
+{
+  "name": "profile-editor-javascript-ms-cinti",
+  "version": "1.0.0",
+  "description": "No starter code is provided. Start from scratch!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodecoolGlobal/profile-editor-javascript-MS-Cinti.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodecoolGlobal/profile-editor-javascript-MS-Cinti/issues"
+  },
+  "homepage": "https://github.com/CodecoolGlobal/profile-editor-javascript-MS-Cinti#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1",
+    "file-upload": "^0.0.0"
+  }
+}

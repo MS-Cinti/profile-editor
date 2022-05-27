@@ -1,0 +1,231 @@
+body{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.img-container{
+    position: relative;
+}
+
+.img{
+    position: absolute;
+    max-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.flex-container{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(149, 151, 149, 0.801);
+    height: 35vw;
+    width: 55vw;
+    border-radius: 4vw;
+    /*max-width: 100vh;*/
+    column-gap: 3vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    position: absolute;
+    top: -5%;
+    left: calc(1500vw/50%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 3vw;
+}
+
+#form #imageChooser{
+    position: absolute;
+    left: 5%;
+    top: 43%;
+    width: 13vw;
+    margin-top: 1vw;
+    padding: 0;
+    border: none;
+}
+
+input{
+    font-family: 'Raleway', italic;
+    width: 25%;
+    padding: 0.5vw;
+    margin: 1vw 0;
+    border: 1px solid #ccc;
+    border-radius: 1.8vw;
+    box-sizing: border-box;
+    letter-spacing: 0.01vw;
+    background-color: #f1f0f0;
+    border: 2px solid rgba(31, 75, 17, 0.712);
+}
+
+::placeholder{
+    font-weight: 700;
+    color: rgba(31, 75, 17, 0.445);
+}
+
+#fname{
+    position: absolute;
+    top: 22%;
+    left: 40%;
+}
+
+.material-icons{
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
+
+#sname{
+    position: absolute;
+    top: 22%;
+    left: 70%;
+}
+
+#zip{
+    position: absolute;
+    top: 37%;
+    left: 40%;
+}
+
+#cou{
+    position: absolute;
+    top: 37%;
+    left: 70%;
+}
+
+#cit{
+    position: absolute;
+    top: 52%;
+    left: 40%;
+}
+
+#str{
+    position: absolute;
+    top: 52%;
+    left: 70%;
+}
+
+#hnu{
+    position: absolute;
+    top: 67%;
+    left: 54%;
+}
+
+#intr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 71%;
+    top: 59%;
+    height: 7vw;
+    font-family: 'Raleway', italic;
+    width: 25%;
+    padding: 0.7vw;
+    margin: 1vw 0;
+    border: 1px solid #ccc;
+    border-radius: 1.8vw;
+    box-sizing: border-box;
+    letter-spacing: 0.01vw;
+    background-color: #f1f0f0;
+    resize: none;
+    border: 2px solid rgba(31, 75, 17, 0.712);
+}
+
+.image-preview{
+    /*default text*/
+    display: flex;
+    font-family: 'Raleway', serif;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: rgba(31, 75, 17, 0.445);
+
+    position: absolute;
+    background-color: #f1f0f0;
+    top: 10%;
+    right: 74%;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 5vw;
+    border: 2px solid rgba(31, 75, 17, 0.712);
+    margin-top: 0.5vw;
+}
+
+.image-preview__image{
+    display: none;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 5vw;
+    object-fit: cover;
+}
+
+#imageChooser{
+    position: absolute;
+    font-family: 'Raleway', serif;
+    font-size: 0.6vw;
+    top: 40%;
+    right: 78%;
+    background-color: rgb(31, 75, 17);
+    color: white;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    margin-top: 0.3vw;
+    letter-spacing: 0.05vw;
+}
+
+#imageChooser:hover{
+    opacity: 0.9;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.saveButton{
+    position: absolute;
+    font-family: 'Raleway', serif;
+    font-size: 0.6vw;
+    bottom: 8%;
+    left: 55%;
+    background-color: rgb(64, 134, 43);
+    border: 1px solid rgb(64, 134, 43);
+    color: #fff;
+    height: 2vw;
+    width: 5vw;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+}
+
+.saveButton:hover{
+  opacity: 0.9;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.deleteButton{
+    position: absolute;
+    font-family: 'Raleway', serif;
+    font-size: 0.6vw;
+    bottom: 8%;
+    left: 68%;
+    background-color: rgba(214, 34, 2, 0.815);
+    border: 1px solid rgba(214, 34, 2, 0.815);
+    color: #fff;
+    height: 2vw;
+    width: 5vw;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+}
+
+.deleteButton:hover{
+    opacity: 0.9;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
