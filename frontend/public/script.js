@@ -1,30 +1,32 @@
 const htmlBody = `
-<section class="img-container">
-    <img class="img" src="./public/images/coffee2.jpg" alt="coffee2">
-</section>
-<section class="flex-container">
-    <h1>Register</h1>
-    <div class="image-preview" id="image-preview">
-        <img src="" alt="Image Preview" class="image-preview__image">
-        <span id="img-prev-dt" class="image-preview__default-text">Image Preview</span>
-    </div>
-    <form id="form">
-        <input type="file" id="imageChooser" name="picture">
-        <input type="text" id="fname" name="fname" placeholder="First name">
-        <input type="text" id="sname" name="sname" placeholder="Surname"><br>
-        <input type="number" id="zip" name="zip" placeholder="Zip code">
-        <input type="text" id="cou" name="cou" placeholder="Country">
-        <input type="text" id="cit" name="city" placeholder="City">
-        <input type="text" id="str" name="str" placeholder="Street">
-        <input type="number" id="hnu" name="hnum" placeholder="House number"><br>
-        <textarea name="intr" id="intr" wrap="hard" placeholder="Introduction..."></textarea><br>
-        <button class="saveButton" onclick="saveData()">save</button>
-    </form><br>
-    <button class="deleteButton" onclick="deleteData()">delete</button>
-</section>
+    <section class="img-container">
+        <img class="img" src="./public/images/coffee2.jpg" alt="coffee2">
+    </section>
+    <section class="flex-container">
+        <h1>Register</h1>
+        <div class="image-preview" id="image-preview">
+            <img src="" alt="Image Preview" id="img-prev-id" class="image-preview__image">
+            <span id="img-prev-dt" class="image-preview__default-text">Image Preview</span>
+        </div>
+        <form id="form">
+            <input type="file" id="imageChooser" name="picture">
+            <input type="text" id="fname" name="fname" placeholder="First name">
+            <input type="text" id="sname" name="sname" placeholder="Surname"><br>
+            <input type="number" id="zip" name="zip" placeholder="Zip code">
+            <input type="text" id="cou" name="cou" placeholder="Country">
+            <input type="text" id="cit" name="city" placeholder="City">
+            <input type="text" id="str" name="str" placeholder="Street">
+            <input type="number" id="hnu" name="hnum" placeholder="House number"><br>
+            <textarea name="intr" id="intr" wrap="hard" placeholder="Introduction..."></textarea><br>
+            <button class="saveButton" onclick="saveData()">save</button>
+        </form><br>
+        <button class="deleteButton" onclick="deleteData()">delete</button>
+    </section>
 `;
 
 const loadEvent = () => {
+
+    console.log("the page is loaded")
     let rootElement = document.getElementById("root");
 
     rootElement.insertAdjacentHTML("beforeend", htmlBody);
@@ -36,6 +38,8 @@ const loadEvent = () => {
     //image.addEventListener("change", imageUpload());
 
     imageUpload()
+
+    
 
     const formElement = document.getElementById("form");
 
@@ -144,9 +148,10 @@ const getIntro = () => {
 
 const imageUpload = () => {
     
-    const imageTag = document.getElementById("imageChooser")
+    const imageTag = document.getElementById("img-prev-id")
+    
     const image = imageTag.value
-    console.log(image)
+    console.log(imageTag.src)
     const previewContainer = document.getElementById("image-preview")
     console.log(previewContainer)
     const previewImage = previewContainer.querySelector(".image-preview__image")
@@ -174,7 +179,7 @@ const imageUpload = () => {
             previewImage.setAttribute("src", "")
         }
     })
-
+   
     return image;
 }
 
@@ -260,7 +265,11 @@ const deleteData = () => {
     document.getElementById('str').value = ''
     document.getElementById('hnu').value = ''
     document.getElementById('intr').value = ''
-    document.querySelector('.image-preview__image') = ''
+    document.querySelector('.image-preview__image').remove();
+
+    /* const prevImgSrc = document.getElementById("img-prev-id")
+    console.log(prevImgSrc.src) */
+    //prevImgSrc.style.display = "none"
 
     //hátra van még: a képet is ki kell törölni a delete gombbal frontendről!
 }
