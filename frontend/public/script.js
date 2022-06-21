@@ -1,6 +1,6 @@
 const htmlBody = `
     <section class="img-container">
-        <img class="img" src="./public/coffee2.jpg" alt="coffee2">
+        <img class="img" src="./public/coffee.jpg" alt="coffee">
     </section>
     <section class="flex-container">
         <h1>Register</h1>
