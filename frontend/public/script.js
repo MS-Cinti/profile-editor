@@ -1,6 +1,6 @@
 const htmlBody = `
     <section class="img-container">
-        <img class="img" src="./public/images/coffee2.jpg" alt="coffee2">
+        <img class="img" src="./public/coffee2.jpg" alt="coffee2">
     </section>
     <section class="flex-container">
         <h1>Register</h1>
@@ -19,13 +19,12 @@ const htmlBody = `
             <input type="number" id="hnu" name="hnum" placeholder="House number"><br>
             <textarea name="intr" id="intr" wrap="hard" placeholder="Introduction..."></textarea><br>
             <button class="saveButton" onclick="saveData()">save</button>
+            <button class="deleteButton" onclick="deleteData()">delete</button>
         </form><br>
-        <button class="deleteButton" onclick="deleteData()">delete</button>
     </section>
 `;
 
 const loadEvent = () => {
-
     console.log("the page is loaded")
     let rootElement = document.getElementById("root");
 
