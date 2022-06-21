@@ -19,38 +19,28 @@ const htmlBody = `
             <input type="number" id="hnu" name="hnum" placeholder="House number"><br>
             <textarea name="intr" id="intr" wrap="hard" placeholder="Introduction..."></textarea><br>
             <button class="saveButton" onclick="saveData()">save</button>
-            <button class="deleteButton" onclick="deleteData()">delete</button>
-        </form><br>
+            </form><br>
+        <button class="deleteButton" onclick="deleteData()">delete</button>
     </section>
 `;
 
 const loadEvent = () => {
+
     console.log("the page is loaded")
+
     let rootElement = document.getElementById("root");
 
     rootElement.insertAdjacentHTML("beforeend", htmlBody);
-
-    //const input = document.querySelectorAll("input");
-
-    //let image = document.getElementById("imageChooser");
-
-    //image.addEventListener("change", imageUpload());
 
     imageUpload()
 
     const formElement = document.getElementById("form");
 
-
-    console.log(formElement.target)
-
     formElement.addEventListener("submit", e => {
         e.preventDefault();
 
-        //postázni akarom az adatokat, ehhez ez a doboz hozzá:
         const formData = new FormData();
-        console.log(formData)
 
-        //formData.append("title", e.target.querySelector(`input[name="title"]`).value);
         formData.append("picture", e.target.querySelector(`input[name="picture"]`).files[0]);
 
         const fetchSettings = {
@@ -58,15 +48,10 @@ const loadEvent = () => {
             body: formData
         };
 
-        console.log('here1')
-        console.log(formData)
-
-        //fetch("/", fetchSettings)
         fetch("http://127.0.0.1:3000/user/imageUpload", fetchSettings)
         .then(async data => {
             if (data.status === 200){
                 const res = await data.json()
-                //e.target.outerHTML = `<img src="upload/${res.pictureName}">`;
                 console.dir(data)
             }
         })
@@ -84,15 +69,13 @@ const getFirstName = () => {
     const firstNameTag = document.getElementById("fname")
     const firstName = firstNameTag.value
     return firstName
-    //console.log(firstName)
 }
 
 const getSurName = () => {
 
     const surNameTag = document.getElementById("sname")
     const surName = surNameTag.value
-    return surName //hogy ne undefined legyen az objecten belül a value
-    //console.log(surName)
+    return surName
 }
 
 const getZipCode = () => {
@@ -100,7 +83,6 @@ const getZipCode = () => {
     const zipCodeTag = document.getElementById("zip")
     const zipCode = zipCodeTag.value
     return zipCode
-    //console.log(zipCode)
 }
 
 const getCountry = () => {
@@ -108,7 +90,6 @@ const getCountry = () => {
     const countryTag = document.getElementById("cou")
     const country = countryTag.value
     return country
-    //console.log(country)
 }
 
 const getCity = () => {
@@ -116,7 +97,6 @@ const getCity = () => {
     const cityTag = document.getElementById("cit")
     const city = cityTag.value
     return city
-    //console.log(city)
 }
 
 const getStreet = () => {
@@ -124,7 +104,6 @@ const getStreet = () => {
     const streetTag = document.getElementById("str")
     const street = streetTag.value
     return street
-    //console.log(street)
 }
 
 const getHouseNumber = () => {
@@ -132,7 +111,6 @@ const getHouseNumber = () => {
     const houseNumberTag = document.getElementById("hnu")
     const houseNumber = houseNumberTag.value
     return houseNumber
-    //console.log(houseNumber)
 }
 
 const getIntro = () => {
@@ -140,16 +118,13 @@ const getIntro = () => {
     const introTag = document.getElementById("intr")
     const intro = introTag.value
     return intro
-    //console.log(intro)
 }
 
 const imageUpload = () => {
     
     const imageTag = document.getElementById("imageChooser")
     const image = imageTag.value
-    console.log(imageTag.src)
     const previewContainer = document.getElementById("image-preview")
-    console.log(previewContainer)
     const previewImage = previewContainer.querySelector(".image-preview__image")
     const previewDefaultText = previewContainer.querySelector(".image-preview__default-text")
 
@@ -163,7 +138,7 @@ const imageUpload = () => {
             previewImage.style.display = "block"
 
             reader.addEventListener("load", function() {
-                console.log(this)
+                //console.log(this)
                 previewImage.setAttribute("src", this.result)
             })
 
@@ -194,8 +169,6 @@ const saveData = () => {
         id: getFirstName() + getSurName() + getZipCode() + getCountry() + getCity() + getStreet() + getHouseNumber()
     }
 
-    console.log(dataOfUser)
-
     fetch ("http://127.0.0.1:3000/user/add",{
         method: 'post',
         headers: {
@@ -212,9 +185,6 @@ const saveData = () => {
 const deleteData = () => {
     const imageTag = document.getElementById("imageChooser");
     const previewContainer = document.getElementById("image-preview")
-    //console.log(previewContainer)
-    const previewImage = previewContainer.querySelector(".image-preview__image")
-    previewImage.setAttribute("src", "")
 
     const dataOfUser = {
         firstName: getFirstName(),
@@ -228,8 +198,6 @@ const deleteData = () => {
         image: imageTag.value,
         id: getFirstName() + getSurName() + getZipCode() + getCountry() + getCity() + getStreet() + getHouseNumber()
     }
-
-    console.log(dataOfUser)
 
     fetch ("http://127.0.0.1:3000/user/delete/" + dataOfUser.id,{
         method: 'DELETE',

@@ -149,8 +149,6 @@ app.delete('/user/delete/:id', (req, res) => {
     //save the filtered data
     saveUserData(filterUser)
     res.send({success: true, msg: 'User removed successfully'})
-
-    /*fs.unlinkSync("./frontend/public/upload/");*/  
 })
 
 app.delete('/user/deleteImage/', (req, res) => {
