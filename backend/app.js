@@ -6,16 +6,16 @@ const fileUpload = require("express-fileupload");
 const bodyParser = require('body-parser')
 
 
-const dataLocation = path.join(`${__dirname}/../docs/frontend/data/`);
-const uploads = path.join(`${__dirname}/../docs/frontend/upload/`);
+const dataLocation = path.join(`${__dirname}/../frontend/data/`);
+const uploads = path.join(`${__dirname}/../frontend/upload/`);
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use("/upload", express.static(`${__dirname}/../docs/frontend/upload`));
+app.use("/upload", express.static(`${__dirname}/../frontend/upload`));
 app.use(fileUpload());
 //app.use(express.json())
-app.use("/data", express.static(`${__dirname}/../docs/frontend/data`))
+app.use("/data", express.static(`${__dirname}/../frontend/data`))
 
 
 //read the user data from json file
@@ -33,7 +33,7 @@ const getUserData = () => {
 
 //GET methods
 app.get('/', (req, res) => {
-	res.sendFile( path.join(`${__dirname}/../docs/frontend/index.html`) )
+	res.sendFile( path.join(`${__dirname}/../frontend/index.html`) )
 })
 
 app.get('/user/list', (req, res) => {
@@ -167,7 +167,7 @@ app.delete('/user/deleteImage/', (req, res) => {
 })
 
 
-app.use("/public", express.static(`${__dirname}/../docs/frontend/public`))
+app.use("/public", express.static(`${__dirname}/../frontend/public`))
 
 
 //configure the server port
