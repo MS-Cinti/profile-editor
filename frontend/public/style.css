@@ -315,6 +315,55 @@ input{
     }
 }
 
+@media screen and (max-width: 768px) {
+
+    .flex-container{
+        height: 60vw;
+        width: 80vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ::placeholder{
+        font-size: smaller;
+    }
+
+    #imageChooser{
+        font-size: 1.3vw;
+        width: 17vw;
+        height: auto;
+    }
+
+    h1{
+        font-size: 6vw;
+    }
+
+    .image-preview{
+        height: 16vw;
+        width: 16vw;
+        border-radius: 8vw;
+    }
+
+    #intr{
+        height: 11vw;
+    }
+
+    .saveButton{
+        height: 5vw;
+        width: 10vw;
+        font-size: 1vw;
+        left: 50%;
+    }
+
+    .deleteButton{
+        height: 5vw;
+        width: 10vw;
+        font-size: 1vw;
+        left: 70%;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
 }
