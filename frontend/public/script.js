@@ -5,7 +5,7 @@ const htmlBody = `
     <section class="flex-container">
         <h1>Register</h1>
         <div class="image-preview" id="image-preview">
-            <img src="" alt="Image Preview" id="img-prev-id" class="image-preview__image">
+            <img src="" alt="Image Preview" class="image-preview__image">
             <span id="img-prev-dt" class="image-preview__default-text">Image Preview</span>
         </div>
         <form id="form">
@@ -38,8 +38,6 @@ const loadEvent = () => {
     //image.addEventListener("change", imageUpload());
 
     imageUpload()
-
-    
 
     const formElement = document.getElementById("form");
 
@@ -148,8 +146,7 @@ const getIntro = () => {
 
 const imageUpload = () => {
     
-    const imageTag = document.getElementById("img-prev-id")
-    
+    const imageTag = document.getElementById("imageChooser")
     const image = imageTag.value
     console.log(imageTag.src)
     const previewContainer = document.getElementById("image-preview")
@@ -182,7 +179,6 @@ const imageUpload = () => {
    
     return image;
 }
-
 
 const saveData = () => {
     const imageTag = document.getElementById("imageChooser");
@@ -219,6 +215,7 @@ const deleteData = () => {
     const previewContainer = document.getElementById("image-preview")
     //console.log(previewContainer)
     const previewImage = previewContainer.querySelector(".image-preview__image")
+    previewImage.setAttribute("src", "")
 
     const dataOfUser = {
         firstName: getFirstName(),
@@ -267,9 +264,6 @@ const deleteData = () => {
     document.getElementById('intr').value = ''
     document.querySelector('.image-preview__image').remove();
 
-    /* const prevImgSrc = document.getElementById("img-prev-id")
-    console.log(prevImgSrc.src) */
-    //prevImgSrc.style.display = "none"
-
-    //hátra van még: a képet is ki kell törölni a delete gombbal frontendről!
+    const input = document.querySelector('input')
+    input.value = "";
 }
