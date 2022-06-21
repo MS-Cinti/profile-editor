@@ -366,4 +366,97 @@ input{
 
 @media screen and (max-width: 600px) {
 
+    .flex-container{
+        height: 175vw;
+        width: 78vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .image-preview{
+        height: 30vw;
+        width: 30vw;
+        border-radius: 15vw;
+        top: 10%;
+        right: 30%;
+        text-align: center;
+    }
+    
+    #imageChooser{
+        font-size: 2.2vw;
+        width: 30vw;
+        height: auto;
+        left: 59%;
+        top: 21%;
+    }
+
+    h1{
+        font-size: 10vw;
+        top: -3%;
+    }
+
+    input{
+        height: 4%;
+        width: 40%;
+        transform: translate(-75%, 450%);
+    }
+
+    #fname{
+        top: 22%;
+        left: 35%;
+    }
+    
+    #sname{
+        top: 22%;
+        left: 85%;
+    }
+    
+    #zip{
+        top: 32%;
+        left: 35%;
+    }
+    
+    #cou{
+        top: 32%;
+        left: 85%;
+    }
+    
+    #cit{
+        top: 42%;
+        left: 35%;
+    }
+    
+    #str{
+        top: 42%;
+        left: 85%;
+    }
+    
+    #hnu{
+        top: 52%;
+        left: 35%;
+    }
+
+    #intr{
+        top: 70%;
+        left: 55%;
+        height: 20vw;
+        width: 40%;
+    }
+
+    .saveButton{
+        height: 9vw;
+        width: 20vw;
+        font-size: 2.5vw;
+        left: 20%;
+        bottom: 7%;
+    }
+
+    .deleteButton{
+        height: 9vw;
+        width: 20vw;
+        font-size: 2.5vw;
+        left: 55%;
+        bottom: 7%;
+    }
 }
